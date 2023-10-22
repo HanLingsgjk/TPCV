@@ -45,6 +45,8 @@ You can create symbolic links to wherever the datasets were downloaded in the `d
         ├── frames_finalpass
         ├── optical_flow
 ```
+## Pretrained weights on KITTI
+https://drive.google.com/drive/folders/1Ddh1HYKVo5CVITmLfV9_8uJKMI3HdePd?usp=share_link
 
 ## Train on KITTI
 
