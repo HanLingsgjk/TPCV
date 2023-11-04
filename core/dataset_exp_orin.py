@@ -636,7 +636,6 @@ class KITTI_test(FlowDataset):#/home/lh/RAFT3D-DEPTH/data_train_test /home/xuxia
         disp1 = []
         disp2 = []
         flow =[]
-        mask = []
         #images1o = sorted(glob(osp.join(root, 'img1/*_10.png')))
         #images2o = sorted(glob(osp.join(root, 'img2/*_10.png')))
         #disp1o = sorted(glob(osp.join(root, 'disp_0/*_10.png')))
@@ -646,13 +645,11 @@ class KITTI_test(FlowDataset):#/home/lh/RAFT3D-DEPTH/data_train_test /home/xuxia
         images2o = sorted(glob(osp.join(root, 'image_2/*_11.png')))
         disp1o = sorted(glob(osp.join(root, 'disp_occ_0/*_10.png')))
         disp2o = sorted(glob(osp.join(root, 'disp_occ_1/*_10.png')))
-        masko = sorted(glob(osp.join(root, 'mask_img/*_10.png')))
         for j in range(images2o.__len__()):
             images1.append(images1o[j])
             images2.append(images2o[j])
             disp1.append(disp1o[j])
             disp2.append(disp2o[j])
-            mask.append(masko[j])
 
 
         for img1, img2 in zip(images1, images2):
@@ -668,7 +665,6 @@ class KITTI_test(FlowDataset):#/home/lh/RAFT3D-DEPTH/data_train_test /home/xuxia
                 flow.append(flowo[j])
 
         self.flow_list = flow
-        self.mask_list = mask
 
     def triangulation(self, disp, bl=0.5327254279298227, fl=721.5377):#kitti flow 2015
         disp[disp==0]= 1
